@@ -1,0 +1,13 @@
+@use '../../../assets/styles/main.scss' as global;
+
+#button {
+  padding: 1rem 2.5rem;
+  border-radius: 10px;
+  background-color: global.$primary-orange;
+  color: white;
+  transform: translateY(0px);
+  transition: 200ms ease-out transform;
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
