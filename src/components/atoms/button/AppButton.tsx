@@ -1,7 +1,7 @@
-import { ButtonProps } from "./button.d";
-import './button.scss'
+import { ButtonProps } from "./AppButton.d";
+import './AppButton.scss'
 
-export default function Button({ children, onClick }: ButtonProps) {
+export default function AppButton({ children, onClick }: ButtonProps) {
   return (
     <button
       id="button" 

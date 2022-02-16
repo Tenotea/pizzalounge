@@ -1,9 +1,8 @@
-import Button from "./components/atoms/button/Button";
+import Button from "./components/atoms/button/AppButton";
 
 export default function App() {
   return (
-    <main>
-      <Button> Click Me! </Button>
+    <main id="app-body">
     </main>
   );
 }

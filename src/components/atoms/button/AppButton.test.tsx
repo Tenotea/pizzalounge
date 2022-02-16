@@ -1,13 +1,12 @@
-import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
-import Button from './Button';
+import AppButton from './AppButton';
 
 test("Check if Button is a part of the DOM", async () => {
   const onClickHandler = jest.fn()
   const { findByTestId } = render(
-    (<Button onClick={onClickHandler}> 
+    (<AppButton onClick={onClickHandler}> 
       Click Me! 
-    </Button>)
+    </AppButton>)
   );
   const btn = await findByTestId("button")
   fireEvent.click(btn)
