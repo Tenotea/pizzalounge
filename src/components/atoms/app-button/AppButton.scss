@@ -1,0 +1,43 @@
+@use '../../../assets/styles/main.scss' as global;
+
+#app-button {
+  padding: 1rem 2.5rem;
+  border-radius: 10px;
+  background-color: global.$primary-orange;
+  color: white;
+  transform: translateY(0px);
+  transition: 200ms ease-out;
+  transition-property: transform, box-shadow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: max-content;
+  box-shadow: 0px 0px 0px rgba($color: #000000, $alpha: 0);
+  &.expand {
+    max-width: none;
+    width: 100%;
+  }
+  &.rtl {
+    flex-direction: row-reverse;
+  }
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 20px -10px rgba($color: #000000, $alpha: 0.3);
+  }
+  &:disabled {
+    background-color: #414141;
+    color: #848484;
+    &:hover {
+      cursor: not-allowed;
+      transform: translateY(0px);
+    }
+    .btn-icon {
+      opacity: 0.3;
+    }
+  }
+
+  .btn-icon {
+    width: 24px;
+  }
+}

@@ -1,0 +1,16 @@
+@use '../../../assets/styles/main.scss' as global;
+
+#home-left-column {
+  max-width: 800px;
+  display: grid;
+  gap: 2rem;
+  .catch-phrase {
+    color: #FFD8D1;
+    font-weight: 600;
+    line-height: clamp(4rem, 10vw, 6rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    .text-highlight {
+      color: global.$primary-orange;
+    }
+  }
+}

@@ -1,14 +1,14 @@
-import AppButton from "./components/atoms/button/AppButton";
-import AppLogo from "./components/atoms/logo/AppLogo";
-import ICPizzaForButtonFilled from './assets/icons/ic-pizza-for-button-filled.svg'
+import { Route, Routes } from "react-router-dom";
+import AppHeader from "./components/organisms/app-header/AppHeader";
+import HomePage from "./pages/home/Home";
 
 export default function App() {
   return (
     <main id="app-body">
-      <AppLogo />
-      <AppButton icon={ICPizzaForButtonFilled}>
-        Place Order
-      </AppButton>
+      <AppHeader />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
     </main>
   );
 }

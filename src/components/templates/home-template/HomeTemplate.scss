@@ -1,0 +1,12 @@
+#home-template {
+  .content-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1300px;
+    margin: auto;
+    padding: 2rem;
+    @media screen and (min-width: 750px) {
+      padding: 5rem;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+#app-header {
+  max-width: 1440px;
+  padding: 1rem 2rem;
+  @media screen and (min-width: 750px) {
+    padding: 2rem 5rem;
+  }
+  margin: auto;
+}

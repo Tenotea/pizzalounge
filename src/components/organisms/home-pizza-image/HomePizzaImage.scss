@@ -1,0 +1,17 @@
+#home-pizza-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  img {
+    max-height: clamp(40vh, 50vw, 90vh);
+    animation: pulse 5s linear 0s infinite alternate forwards;
+    @keyframes pulse {
+      from {
+        transform: scale(1);
+      } to {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
