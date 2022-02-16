@@ -1,13 +1,38 @@
 @use '../../../assets/styles/main.scss' as global;
 
-#button {
+#app-button {
   padding: 1rem 2.5rem;
   border-radius: 10px;
   background-color: global.$primary-orange;
   color: white;
   transform: translateY(0px);
   transition: 200ms ease-out transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  &.expand {
+    width: 100%;
+  }
+  &.rtl {
+    flex-direction: row-reverse;
+  }
   &:hover {
     transform: translateY(-3px);
+  }
+  &:disabled {
+    background-color: #414141;
+    color: #848484;
+    &:hover {
+      cursor: not-allowed;
+      transform: translateY(0px);
+    }
+    .btn-icon {
+      opacity: 0.3;
+    }
+  }
+
+  .btn-icon {
+    width: 24px;
   }
 }

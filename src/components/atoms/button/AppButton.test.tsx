@@ -4,11 +4,11 @@ import AppButton from './AppButton';
 test("Check if Button is a part of the DOM", async () => {
   const onClickHandler = jest.fn()
   const { findByTestId } = render(
-    (<AppButton onClick={onClickHandler}> 
+    <AppButton onClick={onClickHandler}> 
       Click Me! 
-    </AppButton>)
+    </AppButton>
   );
-  const btn = await findByTestId("button")
+  const btn = await findByTestId("app-button")
   fireEvent.click(btn)
   expect(onClickHandler).toHaveBeenCalled()
 })

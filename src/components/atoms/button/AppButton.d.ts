@@ -1,6 +1,10 @@
 import { ReactChild } from "react";
 
-export type ButtonProps = {
-  children: ReactChild;
+export type AppButtonProps = {
+  children: ReactChild
+  icon?: string
+  expand?: boolean
+  rtl?: boolean
+  disabled?: boolean
   onClick?: () => void
 }

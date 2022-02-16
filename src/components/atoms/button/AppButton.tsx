@@ -1,15 +1,20 @@
-import { ButtonProps } from "./AppButton.d";
+import { AppButtonProps } from "./AppButton.d";
 import './AppButton.scss'
 
-export default function AppButton({ children, onClick }: ButtonProps) {
+export default function AppButton({ children, onClick, icon, rtl, disabled, expand }: AppButtonProps) {
   return (
     <button
-      id="button" 
-      data-testid="button" 
-      className={``}
+      id="app-button" 
+      data-testid="app-button" 
+      className={`
+        ${rtl ? 'rtl': ''}
+        ${expand ? 'expand' : ''}
+      `}
       onClick={onClick && onClick}
+      disabled={disabled}
     >
       {children}
+      { icon && <img src={icon} alt='icon' className="btn-icon" /> }
     </button>
   )
 }

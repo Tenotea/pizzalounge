@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import 'normalize.css';
 import './assets/styles/main.scss';
 import App from './App';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
