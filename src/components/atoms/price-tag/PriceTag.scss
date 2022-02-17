@@ -1,0 +1,21 @@
+@use '../../../assets/styles/main.scss' as global;
+
+#price-tag {
+  padding: 0.5rem 1rem;
+  margin-bottom: 12px;
+  position: relative;
+  background-color: rgba($color: global.$primary-orange, $alpha: 0.4);
+  border-radius: 10px;
+  max-width: max-content;
+  .price {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: global.$primary-orange;
+  }
+  .tag {
+    position: absolute;
+    right: 0;
+    bottom: -12px;
+  }
+}
