@@ -25,7 +25,7 @@ const pizzas: Pizza[] = [
     image: 'https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80', 
     title: 'Pizza Margherita extra', 
     tax: 0.3,
-    variations
+    variations: variations.slice().slice(1)
   },
   {
     id: '4', 
@@ -36,8 +36,8 @@ const pizzas: Pizza[] = [
   },
   {
     id: '5', 
-    image: 'Sicilian Pizza', 
-    title: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=781&q=80', 
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=781&q=80', 
+    title: 'Sicilian Pizza', 
     tax: 0.3,
     variations
   },

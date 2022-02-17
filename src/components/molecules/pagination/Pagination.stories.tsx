@@ -8,6 +8,9 @@ export default {
 
 export const Default = () => {
   return (
-    <Pagination />
+    <Pagination 
+      currentPage={1}
+      totalPages={4}
+    />
   )
 }
