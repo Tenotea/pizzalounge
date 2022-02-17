@@ -15,9 +15,23 @@ export const Default: ComponentStory<typeof AppButton> = () => {
   )
 }
 
+export const DefaultSmall = () => {
+  return (
+    <AppButton small> App Button </AppButton>
+  )
+}
+
 export const WithIcon: ComponentStory<typeof AppButton> = () => {
   return (
     <AppButton icon={ICPizzaForButton}>
+      App Button
+    </AppButton>
+  )
+}
+
+export const SmallWithIcon: ComponentStory<typeof AppButton> = () => {
+  return (
+    <AppButton small icon={ICPizzaForButton}>
       App Button
     </AppButton>
   )
@@ -44,6 +58,18 @@ export const ExpandedWithIcon: ComponentStory<typeof AppButton> = () => {
     <AppButton icon={ICPizzaForButton} expand>
       App Button
     </AppButton>
+  )
+}
+
+export const WithIconOnly: ComponentStory<typeof AppButton> = () => {
+  return (
+    <AppButton icon={ICPizzaForButton} >{''}</AppButton>
+  )
+}
+
+export const SmallWithIconOnly: ComponentStory<typeof AppButton> = () => {
+  return (
+    <AppButton icon={ICPizzaForButton} small>{''}</AppButton>
   )
 }
 

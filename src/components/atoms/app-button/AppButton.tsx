@@ -1,7 +1,7 @@
 import { AppButtonProps } from "./AppButton.d";
 import './AppButton.scss'
 
-export default function AppButton({ children, onClick, icon, rtl, disabled, expand }: AppButtonProps) {
+export default function AppButton({ children, onClick, icon, rtl, disabled, expand, small }: AppButtonProps) {
   return (
     <button
       id="app-button" 
@@ -9,6 +9,7 @@ export default function AppButton({ children, onClick, icon, rtl, disabled, expa
       className={`
         ${rtl ? 'rtl': ''}
         ${expand ? 'expand' : ''}
+        ${small ? 'small' : ''}
       `}
       onClick={onClick && onClick}
       disabled={disabled}

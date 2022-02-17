@@ -1,5 +1,3 @@
-import Pagination from "../../components/molecules/pagination/Pagination";
-import PizzaList from "../../components/organisms/pizza-list/PizzaList";
 import PizzasTemplate from "../../components/templates/pizzas-template/PizzasTemplate";
 import pizzaList from '../../db/pizza.db'
 
