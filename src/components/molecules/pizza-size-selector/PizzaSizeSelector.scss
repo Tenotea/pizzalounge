@@ -1,0 +1,13 @@
+#pizza-size-selector {
+  .pizza-size-selector-label {
+    font-weight: 600;
+    color: #FFFFFFB8;
+  }
+
+  .sizes-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.8rem;
+  }
+}
