@@ -1,6 +1,5 @@
 import AppButton from "../../atoms/app-button/AppButton";
 import CartItemList from "../../organisms/cart-item-list/CartItemList";
-import AppCart from "../../organisms/cart-item-list/CartItemList";
 import CheckoutHeader from "../../organisms/checkout-header/CheckoutHeader";
 import { CheckoutTemplateProps } from './CheckoutTemplate.d'
 import './CheckoutTemplate.scss'
