@@ -1,0 +1,10 @@
+#checkout-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .checkout-header-title {
+    font-weight: 600;
+    font-size: 1.3rem;
+  }
+}
