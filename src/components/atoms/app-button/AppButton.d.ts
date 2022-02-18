@@ -7,5 +7,6 @@ export type AppButtonProps = {
   rtl?: boolean
   disabled?: boolean
   small?: boolean
+  tiny?: boolean
   onClick?: () => void
 }

@@ -7,6 +7,17 @@
   background-color: rgba($color: global.$primary-orange, $alpha: 0.4);
   border-radius: 10px;
   max-width: max-content;
+  &.tiny {
+    border-radius: 6px;
+    padding: 0.3rem 0.7rem;
+    .price {
+      font-size: 0.7rem;
+    }
+    .tag {
+      width: 12px;
+      bottom: -6px;
+    }
+  }
   .price {
     margin: 0;
     font-size: 0.9rem;

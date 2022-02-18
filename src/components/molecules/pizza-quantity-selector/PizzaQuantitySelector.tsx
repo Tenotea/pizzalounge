@@ -5,11 +5,11 @@ import './PizzaQuantitySelector.scss'
 export default function PizzaQuantitySelector ({ quantity }: PizzaQuantitySelectorProps) {
   return (
     <div id="pizza-quantity-selector">
-      <AppButton small disabled> - </AppButton>
+      <AppButton tiny disabled> - </AppButton>
       <span className="quantity">
         { quantity }
       </span>
-      <AppButton small> + </AppButton>
+      <AppButton tiny> + </AppButton>
     </div>
   )
 }

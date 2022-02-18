@@ -47,6 +47,15 @@
     }
   }
 
+  &.tiny {
+    border-radius: 5px;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.6rem;
+    .btn-icon {
+      width: 11px;
+    }
+  }
+
   .btn-icon {
     width: 24px;
   }
