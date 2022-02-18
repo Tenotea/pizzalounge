@@ -1,5 +1,6 @@
 import { Pizza } from '../../../types/Pizza'
 
 export type PizzaCardProps = {
-  pizza: Pizza
+  pizza: Pizza;
+  onClick?: (pizza: Pizza) => void
 }

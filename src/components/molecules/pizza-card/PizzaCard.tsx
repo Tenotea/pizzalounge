@@ -2,9 +2,9 @@ import PriceTag from "../../atoms/price-tag/PriceTag";
 import { PizzaCardProps } from './PizzaCard.d'
 import './PizzaCard.scss'
 
-export default function PizzaCard ({ pizza }: PizzaCardProps) {
+export default function PizzaCard ({ pizza, onClick }: PizzaCardProps) {
   return (
-    <div id="pizza-card">
+    <div id="pizza-card" onClick={() => onClick && onClick(pizza)}>
       <div className="image">
         <img src={pizza.image} alt={pizza.title.toLowerCase()} />
       </div>
