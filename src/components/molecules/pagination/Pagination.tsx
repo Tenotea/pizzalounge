@@ -10,7 +10,8 @@ export default function Pagination ({currentPage, totalPages}: PaginationProps) 
         rtl
         icon={ICPrevious}
         disabled
-      >
+        small
+        >
         Previous
       </AppButton>
 
@@ -19,6 +20,7 @@ export default function Pagination ({currentPage, totalPages}: PaginationProps) 
       </span>
 
       <AppButton
+        small
         icon={ICNext}
       >
         Next

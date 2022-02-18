@@ -1,0 +1,10 @@
+#quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: max-content;
+  .quantity {
+    font-weight: 600;
+    color: white;
+  }
+}
