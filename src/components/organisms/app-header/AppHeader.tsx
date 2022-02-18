@@ -11,10 +11,20 @@ export default function AppHeader () {
   return (
     <header id="app-header">
       <AppLogo />
-      <AppButton icon={ICCartPlus} rtl small onClick={() => setIsCheckoutOpen(true)}>
+      <AppButton 
+        icon={ICCartPlus} 
+        rtl 
+        small 
+        onClick={() => setIsCheckoutOpen(true)}
+      >
         0
       </AppButton>
-      { isCheckoutOpen && <CheckoutTemplate onClose={() => setIsCheckoutOpen(false)} /> }
+      
+      { isCheckoutOpen && 
+        <CheckoutTemplate
+          onClose={() => setIsCheckoutOpen(false)}
+        /> 
+      }
     </header>
   )
 }

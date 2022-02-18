@@ -17,12 +17,12 @@ export default function CartItem ({ pizza }: CartItemProps) {
             { pizza.title }
           </h5>
           <PizzaQuantitySelector 
-            quantity={1}
+            quantity={pizza.quantity}
           />
         </div>
         <div className="cart-item-action-container">
-          <PriceTag price={10} tiny />
-          <AppButton icon={ICTrashCan} disabled tiny>{''}</AppButton>
+          <PriceTag price={pizza.variation.price} tiny />
+          <AppButton icon={ICTrashCan} activeOnHover tiny>{''}</AppButton>
         </div>
       </div>
     </div>

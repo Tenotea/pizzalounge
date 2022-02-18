@@ -1,5 +1,6 @@
 import CloseButton from "../../atoms/close-button/CloseButton";
 import { CheckoutHeaderProps } from './CheckoutHeader.d'
+import './CheckoutHeader.scss'
 
 export default function CheckoutHeader ({ children, onClose }: CheckoutHeaderProps) {
   return (

@@ -1,7 +1,7 @@
 import { AppButtonProps } from "./AppButton.d";
 import './AppButton.scss'
 
-export default function AppButton({ children, onClick, icon, rtl, disabled, expand, small, tiny}: AppButtonProps) {
+export default function AppButton({ children, onClick, icon, rtl, disabled, expand, small, tiny, activeOnHover}: AppButtonProps) {
   return (
     <button
       id="app-button" 
@@ -11,6 +11,7 @@ export default function AppButton({ children, onClick, icon, rtl, disabled, expa
         ${expand ? 'expand' : ''}
         ${small ? 'small' : ''}
         ${tiny ? 'tiny' : ''}
+        ${activeOnHover ? 'active-on-hover' : ''}
       `}
       onClick={onClick && onClick}
       disabled={disabled}

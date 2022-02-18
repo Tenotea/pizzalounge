@@ -45,6 +45,14 @@ export const WithIconAndRightToLeftOrientation: ComponentStory<typeof AppButton>
   )
 }
 
+export const ActiveOnHoverWithIcon: ComponentStory<typeof AppButton> = () => {
+  return (
+    <AppButton icon={ICPizzaForButton} activeOnHover>
+      App Button
+    </AppButton>
+  )
+}
+
 export const DisabledWithIcon: ComponentStory<typeof AppButton> = () => {
   return (
     <AppButton icon={ICPizzaForButton} disabled>
