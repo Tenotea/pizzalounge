@@ -1,8 +1,8 @@
 import { ComponentMeta } from "@storybook/react";
-import QuantitySelector from "./QuantitySelector";
+import QuantitySelector from "./PizzaQuantitySelector";
 
 export default {
-  title: 'Quantity Selector',
+  title: 'Pizza Quantity Selector',
   component: QuantitySelector
 } as ComponentMeta<typeof QuantitySelector>
 

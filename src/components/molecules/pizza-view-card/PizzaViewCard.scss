@@ -1,11 +1,14 @@
 @use '../../../assets/styles/main.scss' as global;
 
 #pizza-view-card {
-  // background-color: global.$background-color;
+  background-color: global.$background-color;
   max-width: 800px;
-  background-color: #414141;
   padding: 2.5rem 4rem;
   border-radius: 50px 50px 0px 0px;
+  background-image: url('../../../assets/images/order-view-pizzas.svg');
+  background-size: contain;
+  background-position: top left;
+  background-repeat: no-repeat;
   .pizza-view-card-header {
     display: flex;
     align-items: flex-start;
@@ -13,7 +16,19 @@
     .pizza-view-card-title {
       margin: 0;
       color: white;
-      font-size: 1.5rem;
+      font-size: 1.8em;
+      max-width: 500px;
     }
+  }
+
+  .pizza-view-card-sizes-container {
+    margin-top: 3rem;  
+  }
+
+  .pizza-view-card-order-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4rem;
   }
 }

@@ -1,10 +1,10 @@
 import AppButton from "../../atoms/app-button/AppButton";
-import { QuantitySelectorProps } from './QuantitySelector.d'
-import './QuantitySelector.scss'
+import { PizzaQuantitySelectorProps } from './PizzaQuantitySelector.d'
+import './PizzaQuantitySelector.scss'
 
-export default function QuantitySelector ({ quantity }: QuantitySelectorProps) {
+export default function PizzaQuantitySelector ({ quantity }: PizzaQuantitySelectorProps) {
   return (
-    <div id="quantity-selector">
+    <div id="pizza-quantity-selector">
       <AppButton small disabled> - </AppButton>
       <span className="quantity">
         { quantity }
