@@ -1,0 +1,40 @@
+#text-field {
+  .field-container {
+    position: relative;
+    .field-label {
+      display: block;
+      position: absolute;
+      color: #8F8F8F;
+      top: 0.6rem;
+      left: 1.5rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      // top: 50%;
+      // bottom: 50%;
+      &.placeholder {
+
+      }
+    }
+    .text-box {
+      border: 1px solid #414141;
+      background-color: #1c1c1c;
+      padding: 0 1.5rem;
+      height: 70px;
+      border-radius: 15px;
+      display: block;
+      width: 100%;
+      outline: none;
+      color: white;
+      font-size: 1rem;
+      padding-top: 0.8rem;
+    }
+  }
+  .error-message {
+    margin: 0;
+    font-weight: 600;
+    margin-top: 0.1rem;
+    color: #ec2557;
+    font-size: 0.8rem;
+    padding-left: 1.5rem;
+  }
+}
