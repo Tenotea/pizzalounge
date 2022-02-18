@@ -1,4 +1,4 @@
-import Pagination from "../../molecules/pagination/Pagination";
+import Pagination from "../../organisms/pagination/Pagination";
 import PizzaList from "../../organisms/pizza-list/PizzaList";
 import { PizzasTemplateProps } from './PizzasTemplate.d'
 import './PizzasTemplate.scss'
