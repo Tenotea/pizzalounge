@@ -1,46 +1,58 @@
-# Getting Started with Create React App
+# Project Description
+> `Preview Link`: [https://pizzalounge.netlify.app](https://pizzzaloung.netlify.app)
+>
+> `Figma Design`: [https://www.figma.com/file/qyFKfOoz3xchpI7bgVXCDD](https://www.figma.com/file/qyFKfOoz3xchpI7bgVXCDD/Awabah-Pizza?node-id=0%3A1)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+
+# Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
+### `yarn dev`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Runs the app in the development mode.
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode.
 
 ### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production to the `build` folder.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `yarn storybook`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Runs the app documentation's server using storybook. 
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Answers
+- `How do you document your frontend code?`
+  
+  > **I document my frontend code using storybook**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- `What are your thoughts on testing for the front-end?`
+   > Personally I don't buy the idea of some integrated tests on the frontend. Some tests end up becoming unnecessarily redundant. End-to-end tests are where my preference lie. They are much more relevant as well as their feedbacks.
+- `What Design Patterns have you used in your frontend projects?`
+  > Atomic Design Pattern
+- `What do you think about Typescript on the front-end?`
+  > Typescript should become the standard for all js applications. That's just how useful I find it. Typescript to a large extent reduces runtime bugs on the frontend which really slaps harder on user experience. 
+- `What are the most important performance issues in React web applications?`
+  > - Rendering too many react components at once which could easily be solved using react lazy-loading
+  >  - Inefficient algorithms on the frontend that ends up consuming too much user memory.
+  > - Pushing some of the heavy load that can be handled on the backend to the frontend as well as pulling in and attempting to render too much information on the frontend
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- `How did you decide on the technical and architectural choices used as part of your solution?`
+  > I paid more attention to how each piece of my application would work in other usecases other than the present one. 
+- `Are there any improvements you could make to your submission`
+  > - A lot! First I'll start by completing the functionalities of the website.
+  > - Next I'll make each page responsive
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+  Submission By: Adelakun Emmanuel
+  I look forward to hearing from you.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  Thank you! 
+```
