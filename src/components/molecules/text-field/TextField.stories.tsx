@@ -10,6 +10,7 @@ export const Default = () => {
   return (
     <TextField
       label="Text Field"
+      name="field"
     />
   )
 }

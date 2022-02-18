@@ -5,14 +5,13 @@
       display: block;
       position: absolute;
       color: #8F8F8F;
-      top: 0.6rem;
+      top: 1.6rem;
       left: 1.5rem;
-      font-size: 0.8rem;
-      font-weight: 500;
-      // top: 50%;
-      // bottom: 50%;
-      &.placeholder {
-
+      transition: 100ms ease-out all;
+      &.exit-placeholder {
+        top: 0.8rem;
+        font-weight: 500;
+        font-size: 0.8rem;
       }
     }
     .text-box {
