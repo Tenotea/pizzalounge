@@ -8,7 +8,9 @@ export default {
 
 export const Default = () => {
   return (
-    <Pagination 
+    <Pagination
+      onPaginatePrevious={() => {}}
+      onPaginateNext={() => {}}
       currentPage={1}
       totalPages={4}
     />
