@@ -5,8 +5,9 @@ import PizzaSizeSelector from "../../molecules/pizza-size-selector/PizzaSizeSele
 import { PizzaViewCardProps } from "./PizzaViewCard.d";
 import './PizzaViewCard.scss'
 import ICCartPlus from '../../../assets/icons/ic-cart-plus.svg'
+import { CartItem } from "../../../types/CartItemSchema.d";
 
-export default function PizzaViewCard ({ pizza, activeVariation, quantity, onQuantityChange, onVariationChange }: PizzaViewCardProps) {
+export default function PizzaViewCard ({ pizza, activeVariation, quantity, onQuantityChange, onVariationChange, onAddToCart }: PizzaViewCardProps) {
   return (
     <div id="pizza-view-card">
       <div className="pizza-view-card-header">
@@ -29,7 +30,7 @@ export default function PizzaViewCard ({ pizza, activeVariation, quantity, onQua
           quantity={quantity}
           onQuantityChange={onQuantityChange}
         />
-        <AppButton icon={ICCartPlus} small>
+        <AppButton icon={ICCartPlus} small onClick={() => onAddToCart(new CartItem(pizza, activeVariation, quantity).create())}>
           Add to Cart
         </AppButton>
       </div>

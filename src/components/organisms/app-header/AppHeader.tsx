@@ -2,11 +2,13 @@ import AppButton from "../../atoms/app-button/AppButton";
 import AppLogo from "../../atoms/app-logo/AppLogo";
 import './AppHeader.scss'
 import ICCartPlus from '../../../assets/icons/ic-cart-plus.svg'
-import { useState } from "react";
+import { useContext, useState } from "react";
 import CheckoutTemplate from "../../templates/checkout-template/CheckoutTemplate";
+import { CartContext } from "../../../App";
 
 export default function AppHeader () {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false)
+  const { cart } = useContext(CartContext) 
 
   return (
     <header id="app-header">
@@ -17,7 +19,7 @@ export default function AppHeader () {
         small 
         onClick={() => setIsCheckoutOpen(true)}
       >
-        0
+        { cart.length }
       </AppButton>
       
       { isCheckoutOpen && 
