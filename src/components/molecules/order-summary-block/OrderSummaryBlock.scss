@@ -1,0 +1,17 @@
+#order-summary-block {
+  padding: 2rem;
+  border: 1px dashed #414141;
+  background-color: #1C1C1C;
+  border-radius: 10px;
+
+  .summary-block-heading {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .summary-block-body {
+    display: grid;
+    gap: 0.5rem;
+  }
+}
