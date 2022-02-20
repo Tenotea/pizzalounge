@@ -22,8 +22,10 @@ export default function PizzaView ({ pizza, onClose }: PizzaViewProps) {
         <div className="pizza-information">
           <PizzaViewCard
             pizza={pizza}
-            variation={selectedVariation}
+            activeVariation={selectedVariation}
             quantity={quantity}
+            onVariationChange={variation => setSelectedVariation(variation)}
+            variations={pizza.variations}
             onQuantityChange={(size) => setQuantity(size)}
           />
         </div>

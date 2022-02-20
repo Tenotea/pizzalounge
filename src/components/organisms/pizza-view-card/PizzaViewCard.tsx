@@ -6,19 +6,20 @@ import { PizzaViewCardProps } from "./PizzaViewCard.d";
 import './PizzaViewCard.scss'
 import ICCartPlus from '../../../assets/icons/ic-cart-plus.svg'
 
-export default function PizzaViewCard ({ pizza, variation, quantity, onQuantityChange }: PizzaViewCardProps) {
+export default function PizzaViewCard ({ pizza, activeVariation, quantity, onQuantityChange, onVariationChange }: PizzaViewCardProps) {
   return (
     <div id="pizza-view-card">
       <div className="pizza-view-card-header">
         <h3 className="pizza-view-card-title">
           { pizza.title }
         </h3>
-        <PriceTag price={variation.price} />
+        <PriceTag price={activeVariation.price} />
       </div>
 
       <div className="pizza-view-card-sizes-container">
         <PizzaSizeSelector
-          activeVariation={variation}
+          onVariationChange={onVariationChange}
+          activeVariation={activeVariation}
           variations={pizza.variations}
         />
       </div>
