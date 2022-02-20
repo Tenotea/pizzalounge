@@ -6,8 +6,13 @@ import { PizzaViewCardProps } from "./PizzaViewCard.d";
 import './PizzaViewCard.scss'
 import ICCartPlus from '../../../assets/icons/ic-cart-plus.svg'
 import { CartItem } from "../../../types/CartItemSchema.d";
+import { isPizzaVariantInCart } from "./PizzaViewCard.functions";
+import { useContext } from "react";
+import { CartContext } from "../../../App";
 
 export default function PizzaViewCard ({ pizza, activeVariation, quantity, onQuantityChange, onVariationChange, onAddToCart }: PizzaViewCardProps) {
+  const { cart } = useContext(CartContext)
+
   return (
     <div id="pizza-view-card">
       <div className="pizza-view-card-header">
@@ -30,8 +35,8 @@ export default function PizzaViewCard ({ pizza, activeVariation, quantity, onQua
           quantity={quantity}
           onQuantityChange={onQuantityChange}
         />
-        <AppButton icon={ICCartPlus} small onClick={() => onAddToCart(new CartItem(pizza, activeVariation, quantity).create())}>
-          Add to Cart
+        <AppButton icon={ICCartPlus} disabled={isPizzaVariantInCart(cart, pizza.id, activeVariation)} small onClick={() => onAddToCart(new CartItem(pizza, activeVariation, quantity).create())}>
+          { isPizzaVariantInCart(cart, pizza.id, activeVariation) ? 'Added to Cart' : 'Add to cart' }
         </AppButton>
       </div>
     </div>

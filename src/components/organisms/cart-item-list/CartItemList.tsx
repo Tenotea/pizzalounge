@@ -10,7 +10,7 @@ export default function CartItemList ({ cartItems }: CartItemListProps) {
   return (
     <section id="cart-item-list">
       { cart.map(pizza => <CartItem
-          key={pizza.id}
+          key={pizza.cartId}
           pizza={pizza}
           onDelete={() => {}}
           onQuantityChange={() => {}}
