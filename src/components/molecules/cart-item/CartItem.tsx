@@ -5,7 +5,7 @@ import { CartItemProps } from './CartItem.d'
 import ICTrashCan from '../../../assets/icons/ic-trash-can.svg'
 import './CartItem.scss'
 
-export default function CartItem ({ pizza, onQuantityChange }: CartItemProps) {
+export default function CartItem ({ pizza, onQuantityChange, onDelete }: CartItemProps) {
   return (
     <div id='cart-item'>
       <div className="cart-item-image-container">
@@ -23,7 +23,7 @@ export default function CartItem ({ pizza, onQuantityChange }: CartItemProps) {
         </div>
         <div className="cart-item-action-container">
           <PriceTag price={pizza.variation.price} tiny />
-          <AppButton icon={ICTrashCan} activeOnHover tiny>{''}</AppButton>
+          <AppButton icon={ICTrashCan} activeOnHover tiny onClick={() => onDelete(pizza)} >{''}</AppButton>
         </div>
       </div>
     </div>

@@ -3,6 +3,6 @@ import { Pizza } from '../../../types/Pizza'
 
 export type CartItemProps = {
   pizza: CartItemSchema;
-  onDelete: (id: string) => void
+  onDelete: (pizza: CartItemSchema) => void
   onQuantityChange: (quantity: number) => void 
 }
