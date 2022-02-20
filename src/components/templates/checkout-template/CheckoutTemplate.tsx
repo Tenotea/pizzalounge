@@ -12,46 +12,54 @@ import { BillingInformation } from "../../../types/BillingInformation";
 import { changeCheckoutStep, changeCheckoutStepBackwards, handleSubmitBillingInformation } from "./ChekcoutTemplate.functions";
 import OrderSummary from "../../organisms/order-summary/OrderSummary";
 import { initialComponentState } from "../../organisms/billing-information-form/BillingInformationForm.functions";
+import OrderComplete from "../../organisms/order-complete/OrderComplete";
 
 export default function CheckoutTemplate({ onClose }: CheckoutTemplateProps) {
   const [currentCheckoutStep, setCurrentCheckoutStep] = useState(0)
-  const { cart, removeFromCart, updateCartItem } = useContext(CartContext)
+  const { cart, removeFromCart, updateCartItem, clearCart } = useContext(CartContext)
   const [billingInformation, setBillingInformation] = useState(initialComponentState as BillingInformation)
 
   return (
     <section id="checkout-template">
-      <div className="checkout-template-container">
-        <CheckoutHeader
-          onClose={onClose}
-        >
-          My Cart
-        </CheckoutHeader>
-        {
-          cart.length > 0 ? (
-            <>
-              <div className="checkout-template-body-container">
-                {currentCheckoutStep === 0 && <CartItemList cartItems={cart} onQuantityChange={updateCartItem} onRemoveFromCart={removeFromCart} />}
-                {currentCheckoutStep === 1 && <BillingInformationForm existingFormData={billingInformation} onSubmit={(formData) => handleSubmitBillingInformation(currentCheckoutStep, formData, setCurrentCheckoutStep, setBillingInformation)} />}
-                {currentCheckoutStep === 2 && <OrderSummary cart={cart} billingInformation={billingInformation} />}
-              </div>
-              <div className="checkout-template-action-container">
-                {currentCheckoutStep > 0 && (
-                  <AppButton small activeOnHover onClick={() => changeCheckoutStepBackwards(currentCheckoutStep, setCurrentCheckoutStep)}>
-                    Back
-                  </AppButton>
-                )}
-                {currentCheckoutStep !== 1 && (
-                  <div className="checkout-button-container">
-                    <AppButton icon={ICCartPlus} small onClick={() => changeCheckoutStep(currentCheckoutStep, setCurrentCheckoutStep)}>
-                      Proceed to checkout
-                    </AppButton>
+      {
+        currentCheckoutStep < 3 ? (
+          <div className="checkout-template-container">
+            <CheckoutHeader
+              onClose={onClose}
+            >
+              My Cart
+            </CheckoutHeader>
+            {
+              cart.length > 0 ? (
+                <>
+                  <div className="checkout-template-body-container">
+                    {currentCheckoutStep === 0 && <CartItemList cartItems={cart} onQuantityChange={updateCartItem} onRemoveFromCart={removeFromCart} />}
+                    {currentCheckoutStep === 1 && <BillingInformationForm existingFormData={billingInformation} onSubmit={(formData) => handleSubmitBillingInformation(currentCheckoutStep, formData, setCurrentCheckoutStep, setBillingInformation)} />}
+                    {currentCheckoutStep === 2 && <OrderSummary cart={cart} billingInformation={billingInformation} />}
                   </div>
-                )}
-              </div>
-            </>
-          ) : <PageMessage message="Your Cart Is Empty!" />
-        }
-      </div>
+                  <div className="checkout-template-action-container">
+                    {currentCheckoutStep > 0 && (
+                      <AppButton small activeOnHover onClick={() => changeCheckoutStepBackwards(currentCheckoutStep, setCurrentCheckoutStep)}>
+                        Back
+                      </AppButton>
+                    )}
+                    {currentCheckoutStep !== 1 && (
+                      <div className="checkout-button-container">
+                        <AppButton icon={ICCartPlus} small onClick={() => changeCheckoutStep(currentCheckoutStep, setCurrentCheckoutStep)}>
+                          Proceed to checkout
+                        </AppButton>
+                      </div>
+                    )}
+                  </div>
+                </>
+              ) : <PageMessage message="Your Cart Is Empty!" />
+            }
+          </div>
+        ) : <OrderComplete onExit={ () => {
+          onClose()
+          clearCart()
+        }} />
+      }
     </section>
   )
 }

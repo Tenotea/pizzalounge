@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import AppHeader from "./components/organisms/app-header/AppHeader";
-import { addToCart, removeFromCart, updateCartItem } from "./components/organisms/cart-item-list/CartItemList.functions";
+import { addToCart, clearCart, removeFromCart, updateCartItem } from "./components/organisms/cart-item-list/CartItemList.functions";
 import HomePage from "./pages/home-page/HomePage";
 import PizzasPage from "./pages/pizzas-page/Pizzas";
 import { CartItemSchema } from "./types/CartItemSchema";
@@ -10,7 +10,8 @@ export const CartContext = React.createContext({
   cart: [] as CartItemSchema[],
   addToCart: (cartItem: CartItemSchema) => {},
   removeFromCart: (cartItem: CartItemSchema) => {},
-  updateCartItem: (cartItem: CartItemSchema) => {}
+  updateCartItem: (cartItem: CartItemSchema) => {},
+  clearCart: () => {}
 })
 
 export default function App() {
@@ -21,7 +22,8 @@ export default function App() {
         cart: cart,
         addToCart: (cartItem) => addToCart(setCart, cart, cartItem),
         removeFromCart: (cartItem) => removeFromCart(setCart, cart, cartItem),
-        updateCartItem: (cartItem) => updateCartItem(setCart, cart, cartItem)
+        updateCartItem: (cartItem) => updateCartItem(setCart, cart, cartItem),
+        clearCart: () => clearCart(setCart)
       }}
     >
       <main id="app-body">

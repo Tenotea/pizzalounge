@@ -1,7 +1,7 @@
 import { BillingInformation } from "../../../types/BillingInformation";
 
 export function changeCheckoutStep ( currentCheckoutStep: number, setCurrentCheckoutStep: (step: number) => void ) {
-  setCurrentCheckoutStep(currentCheckoutStep < 2  ? currentCheckoutStep + 1 : currentCheckoutStep)
+  setCurrentCheckoutStep(currentCheckoutStep < 3  ? currentCheckoutStep + 1 : currentCheckoutStep)
 }
 
 export function changeCheckoutStepBackwards ( currentCheckoutStep: number, setCurrentCheckoutStep: (step: number) => void ) {

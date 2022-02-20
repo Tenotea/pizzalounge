@@ -22,3 +22,7 @@ export function updateCartItem (updateFunction: (cart: CartItemSchema[]) => void
     updateFunction(newCart)
   }
 }
+
+export function clearCart (updateFunction: (cart: CartItemSchema[]) => void) {
+  updateFunction([])
+}
