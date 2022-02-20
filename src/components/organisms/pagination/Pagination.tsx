@@ -22,6 +22,7 @@ export default function Pagination ({currentPage, totalPages, onPaginateNext, on
 
       <AppButton
         small
+        disabled={currentPage >= totalPages}
         icon={ICNext}
         onClick={onPaginateNext}
       >
