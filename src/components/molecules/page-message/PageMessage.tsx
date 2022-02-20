@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom'
-import AppButton from '../../atoms/app-button/AppButton'
 import {PageMessageProps } from './PageMessage.d'
 import './PageMessage.scss'
 
@@ -10,11 +8,11 @@ export default function PageMessage ({ image, message }: PageMessageProps) {
       <p className="message">
         { message }
       </p>
-      <Link to="/pizzas">
+      {/* <Link to="/pizzas">
         <AppButton small>
           Find A pizza
         </AppButton>
-      </Link>
+      </Link> */}
     </div>
   )
 }

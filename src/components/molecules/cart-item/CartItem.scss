@@ -8,8 +8,12 @@
   border-radius: 10px;
   width: 100%;
   .cart-item-image-container {
-    width: 100px;
-    height: 80px;
+    width: 70px;
+    height: 50px;
+    @media screen and (min-width: 720px) {
+      width: 100px;
+      height: 80px;
+    }
     overflow: hidden;
     border-radius: 10px;
     flex-shrink: 0;
@@ -27,6 +31,7 @@
       align-items: flex-start;
       justify-content: space-between;
       margin-bottom: 1rem;
+      gap: 1rem;
       .cart-item-title {
         margin: 0;
         font-size: 1rem;

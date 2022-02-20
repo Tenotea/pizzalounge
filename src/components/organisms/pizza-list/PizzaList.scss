@@ -1,5 +1,13 @@
 #pizza-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  width: 95%;
+  margin: auto;
+  justify-content: center;
   gap: 2rem;
+  @media screen and (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    } 
+  }
 }
