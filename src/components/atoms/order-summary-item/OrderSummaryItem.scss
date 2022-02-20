@@ -1,0 +1,18 @@
+#order-summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  .item-label {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #BCBCBC;
+    margin: 0;
+  }
+  
+  .item-value {
+    margin: 0;
+    color: #FF6347;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+}
