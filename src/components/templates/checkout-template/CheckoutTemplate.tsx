@@ -9,12 +9,14 @@ import { useContext, useState } from "react";
 import { CartContext } from "../../../App";
 import PageMessage from "../../molecules/page-message/PageMessage";
 import { BillingInformation } from "../../../types/BillingInformation";
-import { changeCheckoutStep, handleSubmitBillingInformation } from "./ChekcoutTemplate.functions";
+import { changeCheckoutStep, changeCheckoutStepBackwards, handleSubmitBillingInformation } from "./ChekcoutTemplate.functions";
+import OrderSummary from "../../organisms/order-summary/OrderSummary";
+import { initialComponentState } from "../../organisms/billing-information-form/BillingInformationForm.functions";
 
 export default function CheckoutTemplate({ onClose }: CheckoutTemplateProps) {
   const [currentCheckoutStep, setCurrentCheckoutStep] = useState(0)
   const { cart, removeFromCart, updateCartItem } = useContext(CartContext)
-  const [billingInformation, setBillingInformation] = useState({} as BillingInformation)
+  const [billingInformation, setBillingInformation] = useState(initialComponentState as BillingInformation)
 
   return (
     <section id="checkout-template">
@@ -29,11 +31,12 @@ export default function CheckoutTemplate({ onClose }: CheckoutTemplateProps) {
             <>
               <div className="checkout-template-body-container">
                 {currentCheckoutStep === 0 && <CartItemList cartItems={cart} onQuantityChange={updateCartItem} onRemoveFromCart={removeFromCart} />}
-                {currentCheckoutStep === 1 && <BillingInformationForm onSubmit={(formData) => handleSubmitBillingInformation(currentCheckoutStep, formData, setCurrentCheckoutStep, setBillingInformation)} />}
+                {currentCheckoutStep === 1 && <BillingInformationForm existingFormData={billingInformation} onSubmit={(formData) => handleSubmitBillingInformation(currentCheckoutStep, formData, setCurrentCheckoutStep, setBillingInformation)} />}
+                {currentCheckoutStep === 2 && <OrderSummary cart={cart} billingInformation={billingInformation} />}
               </div>
               <div className="checkout-template-action-container">
                 {currentCheckoutStep > 0 && (
-                  <AppButton small activeOnHover>
+                  <AppButton small activeOnHover onClick={() => changeCheckoutStepBackwards(currentCheckoutStep, setCurrentCheckoutStep)}>
                     Back
                   </AppButton>
                 )}

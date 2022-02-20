@@ -1,7 +1,7 @@
 import { FormEvent } from "react"
 
 export function validateFormField (ev: FormEvent, value: string, pattern: string, setError: (status: boolean) => void) {
-  // ev.preventDefault()
+  ev.preventDefault()
   const regex = new RegExp(pattern)
   setError(!regex.test(value))
 }

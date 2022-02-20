@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { TextFieldProps } from './TextField.d'
 import { updateFieldValue, validateFormField, validateFormFieldOnBlur } from './TextField.functions'
 
@@ -8,6 +8,10 @@ export default function TextField ({ label, error, name, pattern, required, valu
   const [ labelShouldExitPlaceholder, setLabelShouldExitPlaceholder ] = useState(false)
   const [fieldHasError, setFieldHasError] = useState(false)
 
+  useEffect(() => {
+    value ? setLabelShouldExitPlaceholder(true) : setLabelShouldExitPlaceholder(false)
+  }, [])
+  
   return (
     <div id="text-field">
       <div className='field-container'>

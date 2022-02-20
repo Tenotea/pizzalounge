@@ -5,8 +5,8 @@ import { handleSubmitBillingInformation, initialComponentState, reducerFunction 
 import { useEffect, useReducer } from 'react'
 import AppButton from '../../atoms/app-button/AppButton'
 
-export default function BillingInformationForm({ onSubmit }: BillingInformationFormProps) {
-  const [formData, updateFormData] = useReducer(reducerFunction, initialComponentState)
+export default function BillingInformationForm({ onSubmit, existingFormData }: BillingInformationFormProps) {
+  const [formData, updateFormData] = useReducer(reducerFunction, existingFormData || initialComponentState)
 
   return (
     <form

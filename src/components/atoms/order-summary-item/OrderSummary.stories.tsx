@@ -9,6 +9,7 @@ export default {
 export const Default = () => {
   return (
     <OrderSummaryItem
+      cartId="1"
       label="Pizza with cheese and berry toppings x1"
       value="$10.00"
     />
