@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import AppButton from "../../atoms/app-button/AppButton";
 import './OrderComplete.scss'
 import IMParkSuccess from '../../../assets/images/park-success.svg'
