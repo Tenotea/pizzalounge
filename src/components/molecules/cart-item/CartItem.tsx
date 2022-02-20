@@ -5,7 +5,7 @@ import { CartItemProps } from './CartItem.d'
 import ICTrashCan from '../../../assets/icons/ic-trash-can.svg'
 import './CartItem.scss'
 
-export default function CartItem ({ pizza }: CartItemProps) {
+export default function CartItem ({ pizza, onQuantityChange }: CartItemProps) {
   return (
     <div id='cart-item'>
       <div className="cart-item-image-container">
@@ -16,7 +16,8 @@ export default function CartItem ({ pizza }: CartItemProps) {
           <h5 className='cart-item-title'> 
             { pizza.title }
           </h5>
-          <PizzaQuantitySelector 
+          <PizzaQuantitySelector
+            onQuantityChange={onQuantityChange}
             quantity={pizza.quantity}
           />
         </div>

@@ -8,7 +8,8 @@ export default {
 
 export const Default = () => {
   return (
-    <QuantitySelector 
+    <QuantitySelector
+      onQuantityChange={() => {}}
       quantity={1}
     />
   )

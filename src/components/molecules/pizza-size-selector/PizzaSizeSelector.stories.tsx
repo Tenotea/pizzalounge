@@ -15,7 +15,7 @@ const variations = [
 export const Default = () => {
   return (
     <PizzaSizeSelector 
-      size="small"
+      activeVariation={variations[0]}
       variations={variations}
     />
   )

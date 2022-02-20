@@ -1,3 +1,4 @@
 export type PizzaQuantitySelectorProps = {
-  quantity: number
+  quantity: number;
+  onQuantityChange: (size: number) => void
 }
