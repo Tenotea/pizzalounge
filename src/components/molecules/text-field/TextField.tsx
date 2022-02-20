@@ -8,6 +8,7 @@ export default function TextField ({ label, error, name, pattern, required, valu
   const [ labelShouldExitPlaceholder, setLabelShouldExitPlaceholder ] = useState(false)
   const [fieldHasError, setFieldHasError] = useState(false)
 
+  // eslint
   useEffect(() => {
     value ? setLabelShouldExitPlaceholder(true) : setLabelShouldExitPlaceholder(false)
   }, [])

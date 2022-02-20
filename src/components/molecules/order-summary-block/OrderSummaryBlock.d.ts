@@ -1,6 +1,6 @@
-import { OrderSummaryItemProps } from "../../atoms/order-summary-item/OrderSummaryItem.d";
+import { ReactChild } from "react";
 
 export type OrderSummaryBlockProps = {
-  orders: OrderSummaryItemProps[],
-  heading: string
+  heading: string,
+  children: ReactChild
 }

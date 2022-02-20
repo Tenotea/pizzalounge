@@ -35,7 +35,7 @@ export default function CheckoutTemplate({ onClose }: CheckoutTemplateProps) {
                   <div className="checkout-template-body-container">
                     {currentCheckoutStep === 0 && <CartItemList cartItems={cart} onQuantityChange={updateCartItem} onRemoveFromCart={removeFromCart} />}
                     {currentCheckoutStep === 1 && <BillingInformationForm existingFormData={billingInformation} onSubmit={(formData) => handleSubmitBillingInformation(currentCheckoutStep, formData, setCurrentCheckoutStep, setBillingInformation)} />}
-                    {currentCheckoutStep === 2 && <OrderSummary cart={cart} billingInformation={billingInformation} />}
+                    {currentCheckoutStep === 2 && <OrderSummary cart={cart} billingInformation={billingInformation} onProceed={() => changeCheckoutStep(currentCheckoutStep, setCurrentCheckoutStep)} />}
                   </div>
                   <div className="checkout-template-action-container">
                     {currentCheckoutStep > 0 && (
@@ -43,19 +43,17 @@ export default function CheckoutTemplate({ onClose }: CheckoutTemplateProps) {
                         Back
                       </AppButton>
                     )}
-                    {currentCheckoutStep !== 1 && (
-                      <div className="checkout-button-container">
-                        <AppButton icon={ICCartPlus} small onClick={() => changeCheckoutStep(currentCheckoutStep, setCurrentCheckoutStep)}>
-                          Proceed to checkout
-                        </AppButton>
-                      </div>
+                    {currentCheckoutStep === 0 && (
+                      <AppButton icon={ICCartPlus} expand small onClick={() => changeCheckoutStep(currentCheckoutStep, setCurrentCheckoutStep)}>
+                        Proceed to checkout
+                      </AppButton>
                     )}
                   </div>
                 </>
               ) : <PageMessage message="Your Cart Is Empty!" />
             }
           </div>
-        ) : <OrderComplete onExit={ () => {
+        ) : <OrderComplete onExit={() => {
           onClose()
           clearCart()
         }} />

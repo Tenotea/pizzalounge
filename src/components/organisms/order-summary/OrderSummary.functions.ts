@@ -7,7 +7,7 @@ import { OrderSummaryItemProps } from "../../atoms/order-summary-item/OrderSumma
 export function summarizeCart (cart: CartItemSchema[]) {
   const summary: OrderSummaryItemProps[] = []
   let deliveryFee: number = 0
-  
+
   cart.forEach(cartItem => {
     summary.push({
       cartId: cartItem.cartId,
@@ -16,14 +16,19 @@ export function summarizeCart (cart: CartItemSchema[]) {
     })
     deliveryFee += (cartItem.tax * cartItem.variation.price)
   })
-  
+
   summary.push({
     cartId: 'delivery',
     label: 'Delivery Fee',
     value: '$'+parseFloat(deliveryFee.toFixed(2)).toLocaleString()
   })
-  
-  return summary
+
+  let total = summary.slice().reduce((a, b) => {
+    console.log(a, b)
+    return a + parseFloat(b.value.replace('$', ''))
+  }, 0)
+
+  return { summary, total }
 }
 
 export function summarizeBilling (billingInformation: BillingInformation) {
@@ -46,4 +51,28 @@ export function summarizeBilling (billingInformation: BillingInformation) {
   }
 
   return summary
+}
+
+
+export function summarizePayment (billingInformation: BillingInformation) {
+  const summary: OrderSummaryItemProps[] = []
+  const last4Digits = billingInformation.card.number.length > 4 ? billingInformation.card.number.substring(billingInformation.card.number.length - 4) : billingInformation.card.number
+  summary[0] = {
+    cartId: 'card-number',
+    label: 'Card Number',
+    value: '**** **** **** ' + last4Digits
+  }
+
+  summary[1] = {
+    cartId: 'expiry-date',
+    label: 'Expires',
+    value: billingInformation.card.expiry
+  }
+  return summary
+}
+
+export function handleCompletionOfOrder (consent: boolean, action: VoidFunction) {
+  if (consent) {
+    action()
+  }
 }

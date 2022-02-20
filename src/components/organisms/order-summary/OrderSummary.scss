@@ -1,4 +1,22 @@
+@use '../../../assets/styles/main.scss' as global;
+
 #order-summary {
   display: grid;
   gap: 2rem;
+  .total-container {
+    border-top: 1px solid #414141;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    .item-label {
+      font-size: 1rem;
+    }
+    .item-value {
+      font-size: 1.2rem;
+      color: global.$primary-orange;
+    }
+  }
+  .consent-field {
+    color: rgb(106, 184, 230);
+    font-weight: 500;
+  }
 }
