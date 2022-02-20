@@ -14,7 +14,7 @@ export default function CartItem ({ pizza, onQuantityChange, onDelete }: CartIte
       <div className="cart-item-data">
         <div className="cart-item-title-container">
           <h5 className='cart-item-title'> 
-            { pizza.title }
+            { pizza.title } ({pizza.variation.name})
           </h5>
           <PizzaQuantitySelector
             onQuantityChange={onQuantityChange}
