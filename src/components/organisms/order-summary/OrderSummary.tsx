@@ -41,7 +41,7 @@ export default function OrderSummary({ cart, billingInformation, onProceed }: Or
          &nbsp;I confirm the order of this wonderful pizza.
       </label>
 
-      <AppButton expand onClick={() => handleCompletionOfOrder(hasAgreed, onProceed)}>
+      <AppButton expand disabled={!hasAgreed} onClick={() => handleCompletionOfOrder(hasAgreed, onProceed)}>
         Complete your order
       </AppButton>
     </section>
