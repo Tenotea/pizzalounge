@@ -2,7 +2,7 @@ import TextField from '../../molecules/text-field/TextField'
 import './BillingInformationForm.scss'
 import { BillingInformationFormProps } from './BillingInformationForm.d'
 import { handleSubmitBillingInformation, initialComponentState, reducerFunction } from './BillingInformationForm.functions'
-import { useEffect, useReducer } from 'react'
+import { useReducer } from 'react'
 import AppButton from '../../atoms/app-button/AppButton'
 
 export default function BillingInformationForm({ onSubmit, existingFormData }: BillingInformationFormProps) {

@@ -1,5 +1,3 @@
-import { useContext } from 'react'
-import { CartContext } from '../../../App'
 import CartItem from '../../molecules/cart-item/CartItem'
 import  { CartItemListProps } from './CartItemList.d'
 import './CartItemList.scss'
