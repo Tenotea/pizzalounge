@@ -14,6 +14,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "6",
+    "react-sax-demo": "https://github.com/Tenotea/react-sax-demo.git",
     "react-scripts": "5.0.0",
     "sass": "^1.49.7",
     "sb": "^6.4.19",

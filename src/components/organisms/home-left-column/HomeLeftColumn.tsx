@@ -1,7 +1,8 @@
-import AppButton from "../../atoms/app-button/AppButton";
+// import AppButton from "../../atoms/app-button/AppButton";
 import ICPizzaForButtonFilled from "../../../assets/icons/ic-pizza-for-button-filled.svg"
 import './HomeLeftColumn.scss'
 import { Link } from "react-router-dom";
+import RS from 'react-sax-demo'
 
 export default function HomeLeftColumn () {
   return (
@@ -10,9 +11,10 @@ export default function HomeLeftColumn () {
         Fast and affordable <span className="text-highlight"> pizza </span> delivered to your doorstep
       </h1>
       <Link to={"/pizzas"} style={{maxWidth: 'max-content'}}>
-        <AppButton icon={ICPizzaForButtonFilled}>
+        
+        <RS.Button >
           Place an order
-        </AppButton>
+        </RS.Button>
       </Link>
     </section>
   )
